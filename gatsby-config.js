@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Seu Site Incrível`,
-    description: `A melhor descrição do seu site`,
-    twitterUsername: `@seu_twitter`,
+    title: `InfoCidadão`,
+    description: `Seu guia completo de informações e serviços para o cidadão brasileiro.`,
+    twitterUsername: `@infocidadao`,
     image: `/icon.png`,
-    siteUrl: `https://www.seusite.com`,
+    siteUrl: `https://www.seusite.com`, 
   },
   plugins: [
     `gatsby-plugin-image`,
