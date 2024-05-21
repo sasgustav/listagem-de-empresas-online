@@ -1,16 +1,21 @@
 import * as React from 'react';
 import { Seo } from '../components/seo';
-import Header from '../components/Header/Header';
+import Layout from './layout';
+
 
 const IndexPage = () => {
   return (
-    <main>
-      <Seo title="Página Sobre - Seu Site Incrível" />
-      <Header />
-    </main>
+    <Layout>
+      <h1>Olá mundo</h1>
+    </Layout>
   );
 };
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => (
+  <>
+    <Seo title="Página Inicial - Seu Site Incrível" />
+    <title>Home Page</title>
+  </>
+);

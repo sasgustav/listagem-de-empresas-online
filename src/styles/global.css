@@ -1,46 +1,75 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  :root {
+}
+
+:root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
     --font-family: 'Arial', sans-serif;
-  }
-  
-  body {
+}
+
+body {
     font-family: var(--font-family);
     line-height: 1.6;
     color: #333;
-  }
-  
-  a {
+}
+
+a {
     color: var(--primary-color);
     text-decoration: none;
-  }
-  
-  a:hover {
+}
+
+a:hover {
     text-decoration: underline;
-  }
-  
-  h1, h2, h3 {
+}
+
+h1,
+h2,
+h3 {
     font-weight: bold;
-  }
-  
-  /* Estilos para outros elementos */
-  p {
+}
+
+/* Estilos para outros elementos */
+p {
     margin-bottom: 1rem;
-  }
-  
-  ul, ol {
+}
+
+ul,
+ol {
     list-style: none;
     padding: 0;
-  }
-  
-  img {
+}
+
+img {
     max-width: 100%;
     height: auto;
-  }
-  
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Garante que o container ocupe a altura total da viewport */
+}
+
+.main-content {
+    flex: 1;
+    /* Permite que o conteúdo principal ocupe o espaço restante */
+}
+
+.header-container {
+    position: sticky;
+    /* Fixa o header no topo */
+    top: 0;
+    z-index: 10;
+    /* Garante que o header fique acima de outros elementos */
+}
+
+.footer-container {
+    margin-top: auto;
+    /* Empurra o footer para o final */
+}
