@@ -10,15 +10,18 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
+    { // Configuração para imagens
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    { // Configuração para o diretório de listagem
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `directoryListing`,
         path: `${__dirname}/src/data/`,
-      },
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -71,5 +74,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
+    { // Configuração para as Gatsby Functions
+      resolve: `gatsby-plugin-functions`,
+      options: {
+        // (Opcional) Configurações adicionais para o plugin
+      },
+    },
   ],
 };

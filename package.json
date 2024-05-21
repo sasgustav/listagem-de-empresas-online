@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "gatsby": "^5.0.0",
+    "gatsby-plugin-functions": "^0.1.0-7",
     "gatsby-plugin-google-analytics": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
