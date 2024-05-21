@@ -1,5 +1,3 @@
-// src/api/api-cnpj-empresa.js
-
 const fetch = require('node-fetch'); // Importe o módulo 'node-fetch'
 
 exports.handler = async (event, context) => {

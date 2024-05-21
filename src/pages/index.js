@@ -5,6 +5,7 @@ import SearchBar from '../components/SearchBar/SearchBar';
 import SubmitLinkForm from '../components/SubmitLinkForm/SubmitLinkForm';
 import AdditionalInfo from '../components/AdditionalInfo/AdditionalInfo';
 import Section from '../components/Section/Section';
+import CnpjSearch from '../components/CnpjSearch/CnpjSearch';
 
 const IndexPage = () => {
   const sections = [
@@ -50,7 +51,8 @@ const IndexPage = () => {
     <Layout>
       <Hero />
       <SearchBar />
-      {sections.map(section => ( // Renderiza as seções a partir do array "sections"
+      <CnpjSearch />
+      {sections.map(section => (
         <Section key={section.id} title={section.title} description={section.description} links={section.links} />
       ))}
     </Layout>
