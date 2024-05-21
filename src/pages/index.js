@@ -34,6 +34,16 @@ const IndexPage = () => {
         { name: 'Universidades', url: '#', description: 'Lista de universidades públicas e privadas.' },
       ]
     },
+    {
+      id: 'parceiros',
+      title: 'Parceiros',
+      description: 'Conheça nossos parceiros que contribuem para um futuro melhor.',
+      links: [
+        { name: 'SmartSeller', url: 'https://smartseller.com.br/', description: 'Plataforma de gestão para e-commerce.' },
+        { name: 'Dra. Gabriella Figueiredo', url: 'https://www.dragabriellafigueiredo.com.br/', description: 'Especialista em dermatologia e estética.' },
+        { name: 'Prontuário Fácil', url: 'https://prontuariofacil.com.br/', description: 'Software de gestão para clínicas e consultórios.' },
+      ]
+    }
   ];
 
   return (
@@ -43,8 +53,6 @@ const IndexPage = () => {
       {sections.map(section => ( // Renderiza as seções a partir do array "sections"
         <Section key={section.id} title={section.title} description={section.description} links={section.links} />
       ))}
-      <SubmitLinkForm />
-      <AdditionalInfo />
     </Layout>
   );
 };
