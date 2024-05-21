@@ -13,11 +13,21 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `directoryListing`,
+        path: `${__dirname}/src/data/`,
+      },
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-postcss`, 
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: `DirectoryListing`,
+      },
+    },
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
@@ -60,6 +70,6 @@ module.exports = {
         trackingId: "SEU_ID_DO_GOOGLE_ANALYTICS",
       },
     },
-    `gatsby-plugin-mdx`, 
+    `gatsby-plugin-mdx`,
   ],
 };

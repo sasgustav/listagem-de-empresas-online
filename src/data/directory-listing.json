@@ -1,0 +1,26 @@
+[
+    {
+      "id": "saude",
+      "title": "Saúde",
+      "description": "Links para sites e portais sobre saúde pública.",
+      "links": [
+        { "name": "Ministério da Saúde", "url": "https://www.gov.br/saude/pt-br" },
+        { "name": "SUS", "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/sus" }
+      ]
+    },
+    {
+      "id": "educacao",
+      "title": "Educação",
+      "description": "Links para escolas, universidades, cursos online, materiais didáticos, informações sobre bolsas de estudo, etc.",
+      "links": [
+      ]
+    },
+    {
+      "id": "governo",
+      "title": "Governo",
+      "description": "Links para sites oficiais do governo federal, estadual e municipal, portais de transparência, serviços públicos online, informações sobre eleições, legislação, etc.",
+      "links": [
+      ]
+    }
+  ]
+  
