@@ -1,0 +1,13 @@
+.link-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .link-item a {
+    color: #007bff; /* Azul */
+    text-decoration: none;
+  }
+  
+  .link-item a:hover {
+    text-decoration: underline;
+  }
+  

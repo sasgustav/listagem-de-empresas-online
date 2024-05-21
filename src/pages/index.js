@@ -1,21 +1,44 @@
-import * as React from 'react';
-import { Seo } from '../components/seo';
+import React from 'react';
+
+import Hero from '../components/Hero/Hero';
+import SearchBar from '../components/SearchBar/SearchBar';
+import Section from '../components/Section/Section';
+import SubmitLinkForm from '../components/SubmitLinkForm/SubmitLinkForm';
+import AdditionalInfo from '../components/AdditionalInfo/AdditionalInfo';
+import { useStaticQuery, graphql } from 'gatsby';
 import Layout from './layout';
 
-
 const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allDirectoryListingJson {
+        edges {
+          node {
+            id
+            title
+            description
+            links {
+              name
+              url
+              description
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Layout>
-      <h1>Olá mundo</h1>
+      <Hero />
+      <SearchBar />
+      {data.allDirectoryListingJson.edges.map(({ node }) => (
+        <Section key={node.id} title={node.title} description={node.description} links={node.links} />
+      ))}
+      <SubmitLinkForm />
+      <AdditionalInfo />
     </Layout>
   );
 };
 
 export default IndexPage;
-
-export const Head = () => (
-  <>
-    <Seo title="Página Inicial - Seu Site Incrível" />
-    <title>Home Page</title>
-  </>
-);
