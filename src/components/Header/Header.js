@@ -1,21 +1,35 @@
 import React from 'react';
-import styles from './Header.module.css';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import './Header.css'; // Importe o arquivo CSS externo
 
-const Header = () => (
-  <header className={styles.header}>
-    <h1 className={styles.logo}>InfoCidadão</h1>
-    <nav className={styles.nav}>
-      <Link to="/saude" className={styles.navLink}>Saúde</Link>
-      <Link to="/educacao" className={styles.navLink}>Educação</Link>
-      {/* ... outros links */}
-    </nav>
-    <div className={styles.search}>
-      <input type="text" className={styles.searchInput} placeholder="Buscar..." />
-      <button className={styles.searchButton}>Buscar</button>
-    </div>
-    <button className={styles.submitButton}>Submeter Link</button>
-  </header>
-);
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  return React.createElement('header', { className: 'header-container' }, [
+    React.createElement('div', { className: 'header' }, [
+      React.createElement(Link, { to: '/', className: 'logo' }, data.site.siteMetadata.title),
+      React.createElement('nav', { className: 'nav' }, [
+        React.createElement(Link, { to: '/saude', className: 'nav-link', activeClassName: 'active' }, 'Saúde'),
+        React.createElement(Link, { to: '/educacao', className: 'nav-link', activeClassName: 'active' }, 'Educação'),
+        // ... outros links
+      ]),
+      React.createElement('div', { className: 'actions' }, [
+        React.createElement('div', { className: 'search' }, [
+          React.createElement('input', { type: 'text', className: 'search-input', placeholder: 'Buscar...' }),
+          React.createElement('button', { className: 'search-button' }, 'Buscar')
+        ]),
+        React.createElement('button', { className: 'submit-button' }, 'Submeter Link')
+      ])
+    ])
+  ]);
+};
 
 export default Header;

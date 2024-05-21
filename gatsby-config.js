@@ -1,13 +1,10 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
-    title: `Seu Site Incrível`, 
-    description: `A melhor descrição do seu site`, 
-    twitterUsername: `@seu_twitter`, 
+    title: `Seu Site Incrível`,
+    description: `A melhor descrição do seu site`,
+    twitterUsername: `@seu_twitter`,
     image: `/icon.png`,
-    siteUrl: `https://www.seusite.com`, 
+    siteUrl: `https://www.seusite.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -20,6 +17,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-postcss`, 
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
@@ -40,7 +38,15 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet`,
+      options: {
+        htmlAttributes: {
+          lang: `pt-br`,
+        },
+        mergeDefaultHelmet: false,
+      },
+    },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-offline`,
@@ -51,10 +57,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID"
+        trackingId: "SEU_ID_DO_GOOGLE_ANALYTICS",
       },
     },
-    `gatsby-plugin-mdx`,
-    `gatsby-plugin-postcss`    
+    `gatsby-plugin-mdx`, 
   ],
 };
