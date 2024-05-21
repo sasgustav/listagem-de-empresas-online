@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Seo } from '../components/seo';
+import Header from '../components/Header/Header';
 
 const IndexPage = () => {
   return (
     <main>
       <Seo title="Página Sobre - Seu Site Incrível" />
-      <h1>Home Page</h1>
+      <Header />
     </main>
   );
 };
